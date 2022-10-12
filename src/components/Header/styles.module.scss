@@ -1,0 +1,7 @@
+.header {
+	@apply w-full px-8 py-4 border-slate-50/[0.06] border-b;
+
+	h1 {
+		@apply font-bold text-white text-xl;
+	}
+}

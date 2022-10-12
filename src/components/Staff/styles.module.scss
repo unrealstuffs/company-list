@@ -1,0 +1,47 @@
+.placeholder {
+	@apply h-full flex items-center justify-center text-sm;
+}
+
+.companies {
+	@apply relative;
+}
+
+.table {
+	@apply border-collapse table-auto w-full text-sm rounded-xl;
+
+	.checkbox {
+		@apply bg-slate-400/10 hover:bg-slate-400/20 cursor-pointer w-4 h-4 rounded-sm checked:bg-sky-400 hover:checked:bg-sky-300;
+	}
+
+	thead {
+		@apply bg-slate-900;
+	}
+
+	tbody {
+		@apply bg-slate-800;
+	}
+
+	td {
+		@apply border-b border-slate-700 px-4 py-3 text-slate-400;
+
+		.input {
+			@apply w-full py-1 px-1 border-0 bg-transparent focus:bg-slate-700 focus:text-slate-300 border-transparent focus:border-transparent focus:ring-0;
+		}
+	}
+
+	th {
+		@apply border-b border-slate-600 font-medium px-4 py-3 text-slate-200 text-left;
+	}
+}
+
+.actions {
+	@apply sticky bottom-0 w-full grid grid-cols-2;
+
+	button {
+		@apply text-xl text-slate-300 bg-slate-800 hover:bg-slate-700 hover:text-sky-500 py-3 flex justify-center border-b border-slate-700 first:border-r transition-colors disabled:cursor-not-allowed disabled:hover:bg-slate-800 disabled:text-slate-600 disabled:hover:text-slate-600;
+	}
+}
+
+.selected {
+	@apply bg-slate-700;
+}
