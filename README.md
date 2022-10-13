@@ -4,12 +4,14 @@
 
 ### `npm start`
 
-Для тестирования функционала динамической загрузки данных в таблице при скролле, нужно перейти в src/store/slices/dataSlice.ts, и оставить только вторую строку.
+Для тестирования работы таблицы с разным количеством данных, нужно перейти в /src/store/slices/dataSlice.ts и оставить только одну из приведенных ниже строк
 
-// Short data
-import { companies, staff } from '../../constants/data'
+    // Short data
 
-// Long data
-// import { companies, staff } from '../../constants/data_long'
+    import { companies, staff } from '../../constants/data'
+
+    // Long data
+
+    // import { companies, staff } from '../../constants/data_long'
 
 В первой загружается массив с 20 объектами, во второй массив с 10 000 объектов

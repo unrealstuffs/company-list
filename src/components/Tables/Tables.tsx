@@ -11,42 +11,6 @@ const Tables = () => {
 	const [selectedStaff, setSelectedStaff] = useState<number[]>([])
 
 	return (
-		// <div className={styles.tables}>
-		// 	<Table
-		// 		add={addCompany}
-		// 		edit={editCompany}
-		// 		remove={removeCompany}
-		// 		columns={['Название компании', 'Адрес', 'Кол-во сотрудников']}
-		// 		data={companies}
-		// 		selectAllItems={selectAllCompanies}
-		// 		setSelectAllItems={setSelectAllCompanies}
-		// 		selectedItems={selectedCompanies}
-		// 		setSelectedItems={setSelectedCompanies}
-		// 	/>
-		// 	{!selectedCompanies.length && (
-		// 		<div className={styles.placeholder}>Компания не выбрана</div>
-		// 	)}
-		// 	{selectedCompanies.length > 1 && (
-		// 		<div className={styles.placeholder}>
-		// 			Выбрано больше одной компании
-		// 		</div>
-		// 	)}
-		// 	{selectedCompanies.length === 1 && (
-		// 		<Table
-		// 			add={addEmployee}
-		// 			edit={editEmployee}
-		// 			remove={removeEmployee}
-		// 			columns={['Имя', 'Фамилия', 'Должность']}
-		// 			data={staff?.filter(o =>
-		// 				selectedCompanies.includes(o.companyId)
-		// 			)}
-		// 			selectAllItems={selectAllStaff}
-		// 			setSelectAllItems={setSelectAllStaff}
-		// 			selectedItems={selectedStaff}
-		// 			setSelectedItems={setSelectedStaff}
-		// 		/>
-		// 	)}
-		// </div>
 		<div className={styles.tables}>
 			<Companies
 				selectAllCompanies={selectAllCompanies}

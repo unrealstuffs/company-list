@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ICompanies, IStaff } from '../types'
 
+// IMPORT DATA
 // Short data
-import { companies, staff } from '../../constants/data'
+// import { companies, staff } from '../../constants/data'
 
 // Long data
-// import { companies, staff } from '../../constants/data_long'
+import { companies, staff } from '../../constants/data_long'
 
 interface DataState {
 	data: {

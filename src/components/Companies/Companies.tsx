@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { AiOutlinePlus, AiOutlineDelete } from 'react-icons/ai'
 import { useActions } from '../../hooks/useActions'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
+import { ICompanies } from '../../store/types'
 import styles from './styles.module.scss'
 
 interface IProps {
@@ -22,7 +23,7 @@ const Companies: FC<IProps> = ({
 	} = useTypedSelector(state => state.data)
 	const { addCompany, editCompany, removeCompany } = useActions()
 
-	const [editingRow, setEditingRow] = useState<any>(null)
+	const [editingRow, setEditingRow] = useState<ICompanies | null>(null)
 	const [numShow, setNumShow] = useState<number>(10)
 
 	const checkAllCompaniesHandler = (

@@ -1,10 +1,11 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { AiOutlinePlus, AiOutlineDelete } from 'react-icons/ai'
 import { useActions } from '../../hooks/useActions'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
+import { IStaff } from '../../store/types'
 import styles from './styles.module.scss'
 
-interface IStaff {
+interface IProps {
 	selectedCompanies: number[]
 	selectedStaff: number[]
 	selectAllStaff: boolean
@@ -12,7 +13,7 @@ interface IStaff {
 	setSelectedStaff: Function
 }
 
-const Staff: FC<IStaff> = ({
+const Staff: FC<IProps> = ({
 	selectedCompanies,
 	selectAllStaff,
 	selectedStaff,
@@ -24,8 +25,14 @@ const Staff: FC<IStaff> = ({
 	} = useTypedSelector(state => state.data)
 	const { addEmployee, removeEmployee, editEmployee } = useActions()
 
-	const [editingRow, setEditingRow] = useState<any>(null)
-	const [numShow, setNumShow] = useState<number>(10)
+	const defaultNumShow = 10
+
+	const [editingRow, setEditingRow] = useState<IStaff | null>(null)
+	const [numShow, setNumShow] = useState<number>(defaultNumShow)
+
+	useEffect(() => {
+		setNumShow(defaultNumShow)
+	}, [selectedCompanies])
 
 	const checkAllStaffHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSelectAllStaff(e.currentTarget.checked)
